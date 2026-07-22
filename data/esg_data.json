@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-07-22",
+  "disclaimer": "Le module ESG combine des identites d'ETF verifiees (nom, ISIN, TER, SFDR) avec des indicateurs de durabilite illustratifs quand aucune source publique gratuite ne fournit l'intensite carbone ou la couverture des donnees. Ceci n'est jamais presente comme une notation ESG officielle.",
+  "comparison_sets": [
+    {
+      "peer_group": "Actions Monde",
+      "variants": [
+        {
+          "ticker": "IWDA.AS",
+          "label": "Classique",
+          "sfdr": "Article 6",
+          "carbon_intensity_proxy": "Non calcule (necessite fournisseur ESG)",
+          "status": "illustrative"
+        },
+        {
+          "ticker": "n/a",
+          "label": "Screened (exclusions)",
+          "sfdr": "Article 8",
+          "carbon_intensity_proxy": "Reduction attendue modeste vs indice parent",
+          "status": "illustrative_placeholder"
+        },
+        {
+          "ticker": "n/a",
+          "label": "SRI / PAB",
+          "sfdr": "Article 9",
+          "carbon_intensity_proxy": "Reduction attendue forte, univers reduit",
+          "status": "illustrative_placeholder"
+        }
+      ]
+    },
+    {
+      "peer_group": "Europe",
+      "variants": [
+        {
+          "ticker": "MEUD.PA",
+          "label": "Classique",
+          "sfdr": "Article 6",
+          "status": "verified_identity_only"
+        },
+        {
+          "ticker": "ESGE.PA",
+          "label": "ESG Selection (Leaders, cap 5%)",
+          "sfdr": "Article 8",
+          "status": "verified_identity_only"
+        }
+      ]
+    },
+    {
+      "peer_group": "Actions Etats-Unis",
+      "variants": [
+        {
+          "ticker": "CSPX.AS",
+          "label": "Classique",
+          "sfdr": "Article 6",
+          "status": "verified_identity_only"
+        },
+        {
+          "ticker": "ESE.PA",
+          "label": "ESG tilt",
+          "sfdr": "Article 8",
+          "status": "verified_identity_only"
+        }
+      ]
+    }
+  ],
+  "greenwashing_checklist": [
+    "Le nom du fonds correspond-il a la methodologie reellement appliquee ?",
+    "Les exclusions sont-elles significatives ou marginales ?",
+    "L'indice ESG differe-t-il suffisamment de l'indice parent (tracking error mesurable) ?",
+    "La reduction carbone est-elle mesurable et documentee ?",
+    "La couverture des donnees ESG est-elle suffisante (part notee vs non notee) ?",
+    "Les objectifs annonces sont-ils absolus ou relatifs a l'indice parent ?",
+    "Les controverses sont-elles traitees par une politique documentee ?",
+    "La methodologie ESG a-t-elle change recemment sans communication claire ?",
+    "Le produit conserve-t-il des expositions sectorielles controversees malgre le label ?",
+    "Le cout financier de l'approche ESG (TER, tracking error) est-il explicite ?"
+  ],
+  "methodology_note": "Une note ESG depend de la methodologie du fournisseur, de la materialite retenue, de la qualite et de la couverture des donnees, et des estimations utilisees pour combler les donnees manquantes. Article 8 ou Article 9 ne suffit pas seul a juger la qualite d'un produit."
+}

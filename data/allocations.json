@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-07-22",
+  "status": "illustrative",
+  "disclaimer": "Allocations fictives construites pour la demonstration. Ne reproduisent pas les allocations reelles de Yomoni. Les poids actuels/derives sont simules et recalcules a partir des prix de marche publics quand disponibles.",
+  "profiles": [
+    {
+      "id": "prudent",
+      "name": "Profil Prudent",
+      "target_weights": {
+        "Actions Monde": 15,
+        "Actions Etats-Unis": 5,
+        "Europe": 5,
+        "Marches Emergents": 0,
+        "Obligations": 65,
+        "Diversifiants": 10
+      },
+      "rebalance_band_pct": 3
+    },
+    {
+      "id": "equilibre",
+      "name": "Profil Equilibre",
+      "target_weights": {
+        "Actions Monde": 30,
+        "Actions Etats-Unis": 10,
+        "Europe": 10,
+        "Marches Emergents": 5,
+        "Obligations": 38,
+        "Diversifiants": 7
+      },
+      "rebalance_band_pct": 4
+    },
+    {
+      "id": "dynamique",
+      "name": "Profil Dynamique",
+      "target_weights": {
+        "Actions Monde": 45,
+        "Actions Etats-Unis": 15,
+        "Europe": 10,
+        "Marches Emergents": 10,
+        "Obligations": 15,
+        "Diversifiants": 5
+      },
+      "rebalance_band_pct": 5
+    },
+    {
+      "id": "responsable",
+      "name": "Profil Responsable (ESG)",
+      "target_weights": {
+        "Actions Monde": 25,
+        "Actions Etats-Unis": 10,
+        "Europe ESG": 15,
+        "Marches Emergents": 5,
+        "Obligations": 38,
+        "Diversifiants": 7
+      },
+      "rebalance_band_pct": 4,
+      "note": "Poches ESG uniquement (Screened / Selection / SRI selon disponibilite)."
+    },
+    {
+      "id": "100_actions",
+      "name": "Profil 100% Actions",
+      "target_weights": {
+        "Actions Monde": 55,
+        "Actions Etats-Unis": 20,
+        "Europe": 15,
+        "Marches Emergents": 10,
+        "Obligations": 0,
+        "Diversifiants": 0
+      },
+      "rebalance_band_pct": 5
+    }
+  ]
+}

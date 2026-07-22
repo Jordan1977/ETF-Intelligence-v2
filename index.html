@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ETF Intelligence Platform — Jordan Scouarnec</title>
+<meta name="description" content="Prototype pédagogique de dashboard ETF fondé sur des données publiques — Comité, Marchés, Allocations, Screener, ESG, Monitoring, Concurrents.">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+</head>
+<body>
+
+<nav class="topbar">
+  <div class="brand">ETF Intelligence</div>
+  <div class="tabs">
+    <button data-tab="committee">Comité</button>
+    <button data-tab="markets">Marchés</button>
+    <button data-tab="allocations">Allocations</button>
+    <button data-tab="screener">ETF Screener</button>
+    <button data-tab="matrix">Matrice</button>
+    <button data-tab="monitoring">Monitoring</button>
+    <button data-tab="esg">ESG</button>
+    <button data-tab="competitors">Concurrents</button>
+    <button data-tab="method">Méthodologie</button>
+    <button data-tab="sources">Sources &amp; limites</button>
+  </div>
+</nav>
+
+<div class="banner">
+  <strong>Prototype pédagogique</strong> fondé sur des données publiques. Il ne reproduit ni les modèles,
+  ni les allocations, ni les règles internes de Yomoni. Certaines données ESG et allocations sont illustratives
+  et sont identifiées comme telles à chaque endroit où elles apparaissent.
+</div>
+
+<main>
+
+  <!-- ============================================================= COMITÉ -->
+  <section id="view-committee" class="view">
+    <div class="section-head">
+      <div><h2>Vue exécutive — préparation du comité</h2>
+      <p>Indicateurs de marché, synthèse déterministe et alertes prioritaires pour démarrer un comité de gestion ou de sélection ETF.</p></div>
+      <div id="committee-status"></div>
+    </div>
+    <div class="grid four" id="committee-summary"></div>
+    <div class="section-head"><div><h3 style="margin:0">Indicateurs de marché</h3><p id="committee-updated" class="sub" style="margin-top:4px"></p></div></div>
+    <div class="grid three" id="committee-kpis"></div>
+    <div class="section-head"><div><h3 style="margin:0">Ce qu'il faut retenir</h3><p>Généré par des règles simples et déterministes à partir des données ci-dessus — aucun appel à un modèle d'IA.</p></div></div>
+    <div class="grid three" id="committee-recap"></div>
+    <div class="section-head"><div><h3 style="margin:0">Alertes prioritaires</h3></div></div>
+    <div class="card" id="committee-alerts"></div>
+  </section>
+
+  <!-- ============================================================= MARCHÉS -->
+  <section id="view-markets" class="view">
+    <div class="section-head">
+      <div><h2>Marchés</h2><p id="markets-updated" class="sub"></p></div>
+      <div class="filters">
+        <select id="markets-period">
+          <option value="1w">1 semaine</option>
+          <option value="1m" selected>1 mois</option>
+          <option value="3m">3 mois</option>
+          <option value="6m">6 mois</option>
+          <option value="ytd">YTD</option>
+          <option value="1y">1 an</option>
+        </select>
+      </div>
+    </div>
+    <div class="chart-wrap"><canvas id="markets-chart"></canvas></div>
+    <div class="matrix">
+      <table>
+        <thead><tr><th>Indice / actif</th><th>Ticker</th><th>1 sem.</th><th>1 mois</th><th>3 mois</th><th>6 mois</th><th>YTD</th><th>1 an</th><th>Statut</th></tr></thead>
+        <tbody id="markets-table-body"></tbody>
+      </table>
+    </div>
+    <div class="callout"><div class="icon">i</div><div><h3>Limite des proxys</h3>
+    <p>Les tickers utilisés (URTH, ^GSPC, ^STOXX, etc.) sont des proxys publics Yahoo Finance, pas nécessairement
+    les benchmarks officiels des ETF suivis. Les cours peuvent être différés.</p></div></div>
+  </section>
+
+  <!-- ============================================================= ALLOCATIONS -->
+  <section id="view-allocations" class="view">
+    <div class="section-head">
+      <div><h2>Allocations</h2><p>Profils illustratifs. Poids « actuels » simulés à partir des cibles pour démontrer la logique de rééquilibrage — ne représentent aucun portefeuille réel.</p></div>
+      <div class="filters"><select id="alloc-select"></select></div>
+    </div>
+    <div class="grid two">
+      <div class="chart-wrap"><canvas id="alloc-chart"></canvas></div>
+      <div class="matrix">
+        <table>
+          <thead><tr><th>Poche</th><th>Cible</th><th>Actuel (simulé)</th><th>Écart</th><th>Statut</th></tr></thead>
+          <tbody id="alloc-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="alloc-meta"></div>
+  </section>
+
+  <!-- ============================================================= SCREENER -->
+  <section id="view-screener" class="view">
+    <div class="section-head">
+      <div><h2>ETF Screener</h2><p>Filtrer et comparer l'univers ETF démonstratif. Cliquer une ligne pour la fiche détaillée.</p></div>
+    </div>
+    <div class="filters">
+      <select id="screener-category"></select>
+      <input id="screener-search" type="text" placeholder="Rechercher un nom, ticker ou ISIN…">
+      <button class="reset" id="screener-reset">Réinitialiser les filtres</button>
+      <button class="reset" id="screener-export">Export CSV</button>
+      <span class="sub" id="screener-count"></span>
+    </div>
+    <div class="matrix">
+      <table>
+        <thead><tr><th>Nom</th><th>Ticker</th><th>Catégorie</th><th>TER</th><th>Encours</th><th>Réplication</th><th>Domicile</th><th>PEA</th><th>SFDR</th><th>Statut donnée</th></tr></thead>
+        <tbody id="screener-table-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============================================================= MATRICE -->
+  <section id="view-matrix" class="view">
+    <div class="section-head">
+      <div><h2>Matrice de sélection</h2><p>Il n'existe pas de « meilleur ETF » dans l'absolu : comparaison qualitative au sein d'un même peer group.</p></div>
+      <div class="filters"><select id="matrix-group"></select></div>
+    </div>
+    <div class="matrix" id="matrix-table"></div>
+    <div class="callout"><div class="icon">✓</div><div><h3>Lecture de gérant</h3><p id="matrix-conclusion"></p></div></div>
+  </section>
+
+  <!-- ============================================================= MONITORING -->
+  <section id="view-monitoring" class="view">
+    <div class="section-head">
+      <div><h2>Monitoring</h2><p>Alertes opérationnelles générées par des règles transparentes. Aucune alerte ne déclenche automatiquement une décision d'achat ou de vente.</p></div>
+      <div class="filters"><select id="monitor-category"></select></div>
+    </div>
+    <div id="monitor-count" class="badge-row"></div>
+    <div class="card" id="monitor-list"></div>
+  </section>
+
+  <!-- ============================================================= ESG -->
+  <section id="view-esg" class="view">
+    <div class="section-head">
+      <div><h2>ESG</h2><p id="esg-disclaimer" class="sub"></p></div>
+    </div>
+    <div class="section-head"><div><h3 style="margin:0">ESG vs. fidélité à l'indice</h3><p id="esg-scatter-note"></p></div></div>
+    <div class="chart-wrap"><canvas id="esg-chart"></canvas></div>
+    <div class="section-head"><div><h3 style="margin:0">Comparaison par peer group</h3></div></div>
+    <div class="grid three" id="esg-comparison"></div>
+    <div class="section-head"><div><h3 style="margin:0">Grille de contrôle greenwashing</h3><p>Grille de questions, pas une accusation automatique.</p></div></div>
+    <div class="card"><ul id="esg-checklist"></ul></div>
+    <div class="callout warn"><div class="icon">!</div><div><h3>Méthodologie ESG</h3><p id="esg-methodology"></p></div></div>
+  </section>
+
+  <!-- ============================================================= CONCURRENTS -->
+  <section id="view-competitors" class="view">
+    <div class="section-head">
+      <div><h2>Veille concurrentielle</h2><p>Positionnements publics uniquement — les performances de profils non comparables ne sont jamais mises côte à côte.</p></div>
+    </div>
+    <div class="grid four" id="competitors-grid"></div>
+    <div class="section-head"><div><h3 style="margin:0">Chronologie des nouveautés</h3><p>Structure prête à l'emploi — à compléter manuellement (fichier data/news.json) lors de la veille réelle.</p></div></div>
+    <div class="card" id="news-timeline"></div>
+  </section>
+
+  <!-- ============================================================= MÉTHODOLOGIE -->
+  <section id="view-method" class="view">
+    <div class="section-head"><div><h2>Méthodologie</h2><p>Formules utilisées pour les indicateurs calculés dans le Screener et la Matrice.</p></div></div>
+    <div class="grid two">
+      <div class="card"><h3>Performance &amp; risque</h3>
+        <div class="metric"><span>Rendement</span><strong>(Prix fin / Prix début) − 1</strong></div>
+        <div class="metric"><span>Volatilité annualisée</span><strong>écart-type des rendements journaliers × √252</strong></div>
+        <div class="metric"><span>Maximum drawdown</span><strong>pire baisse depuis un sommet historique</strong></div>
+        <div class="metric"><span>Sharpe (rf = 0)</span><strong>rendement annualisé ÷ volatilité annualisée</strong></div>
+      </div>
+      <div class="card"><h3>Réplication</h3>
+        <div class="metric"><span>Tracking difference</span><strong>rendement annualisé ETF − rendement annualisé proxy</strong></div>
+        <div class="metric"><span>Tracking error</span><strong>écart-type annualisé (rendement ETF − rendement proxy)</strong></div>
+        <p class="sub">La tracking difference mesure l'écart moyen de performance ; la tracking error mesure la volatilité de cet écart. Les deux sont distinctes et complémentaires.</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px"><h3>Comment l'outil s'intègre au métier d'Assistant Gérant ETF</h3>
+      <table>
+        <thead><tr><th>Module</th><th>Mission liée</th></tr></thead>
+        <tbody>
+          <tr><td class="highlight">Comité</td><td>Préparation des comités de gestion et de sélection ETF</td></tr>
+          <tr><td class="highlight">Marchés</td><td>Suivi des marchés et des indicateurs macrofinanciers</td></tr>
+          <tr><td class="highlight">Allocations</td><td>Suivi des allocations et de leur performance</td></tr>
+          <tr><td class="highlight">Screener / Matrice</td><td>Comparaison et sélection des ETF</td></tr>
+          <tr><td class="highlight">Monitoring</td><td>Suivi des risques opérationnels et financiers</td></tr>
+          <tr><td class="highlight">ESG</td><td>Intégration de l'ESG dans le processus d'investissement</td></tr>
+          <tr><td class="highlight">Concurrents</td><td>Veille concurrentielle</td></tr>
+          <tr><td class="highlight">Scripts + GitHub Actions</td><td>Automatisation de la collecte, du contrôle et de la présentation</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============================================================= SOURCES ET LIMITES -->
+  <section id="view-sources" class="view">
+    <div class="section-head"><div><h2>Sources et limites</h2></div></div>
+    <div class="grid two">
+      <div class="card"><h3>Sources principales</h3>
+        <ul>
+          <li>Prix et historiques : Yahoo Finance (via yfinance), différés, non institutionnels.</li>
+          <li>Caractéristiques ETF : pages officielles des émetteurs (iShares, Amundi, Vanguard, BNP Paribas AM) et justETF pour vérification croisée.</li>
+          <li>Concurrents : sites officiels Yomoni, Nalo, Ramify, Goodvest.</li>
+        </ul>
+      </div>
+      <div class="card"><h3>Limites assumées</h3>
+        <ul>
+          <li>Les indices utilisés comme benchmarks de calcul sont des proxys publics, pas les indices officiels des ETF.</li>
+          <li>Les données ESG (intensité carbone, couverture, controverses) ne sont pas disponibles gratuitement en temps réel : elles sont marquées « illustratif » lorsque non vérifiées.</li>
+          <li>Performance prix vs. performance dividendes réinvestis, effets de change et horaires de cotation peuvent créer des écarts.</li>
+          <li>Toute information doit être revalidée sur la documentation officielle (KID, prospectus) avant utilisation professionnelle.</li>
+          <li>Ce dashboard ne constitue en aucun cas un conseil en investissement.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer-note">ETF Intelligence Platform · Jordan Scouarnec · Prototype d'entretien — données publiques et illustratives, clairement identifiées</footer>
+
+<div class="detail-panel" id="detail-panel"><div class="detail-card" id="detail-body"></div></div>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+name: Update ETF Intelligence Dashboard
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1-5"
+
+permissions:
+  contents: write
+
+jobs:
+  update-dashboard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # Step 1 — rebuild static reference JSON from the source CSVs.
+      # No network involved: cannot fail because of a market outage.
+      - name: Build static dashboard data
+        run: python scripts/build_dashboard_data.py
+
+      # Step 2 — refresh market data. Designed to degrade gracefully:
+      # on failure it keeps the previous cached values and marks them stale.
+      - name: Update market data
+        run: python scripts/update_market_data.py
+        continue-on-error: true
+
+      # Step 3 — compute ETF risk / tracking metrics.
+      - name: Compute ETF metrics
+        run: python scripts/compute_etf_metrics.py
+        continue-on-error: true
+
+      # Step 4 — validate everything before committing. This step is the
+      # only one allowed to fail the whole job (structural problems only).
+      - name: Validate data
+        run: python scripts/validate_data.py
+
+      - name: Sanity-check the site still renders
+        run: |
+          test -s index.html
+          test $(wc -c < index.html) -gt 5000
+          for f in etf_universe competitors allocations esg_data news market_data; do
+            python -c "import json; json.load(open('data/${f}.json'))"
+          done
+
+      - name: Commit changes if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "chore: refresh dashboard data"
+            git push
+          fi

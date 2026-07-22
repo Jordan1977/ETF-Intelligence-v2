@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-07-22",
+  "disclaimer": "Fichier facilement editable a la main pour la veille concurrentielle. Les entrees ci-dessous sont des exemples de structure, pas des faits verifies.",
+  "items": [
+    {
+      "date": "to_confirm",
+      "actor": "to_confirm",
+      "category": "example",
+      "title": "Exemple : nouvelle enveloppe fiscale ajoutee a l'offre",
+      "status": "illustrative_placeholder",
+      "note": "Structure d'entree a completer manuellement lors de la veille reelle (source + date + lien)."
+    },
+    {
+      "date": "to_confirm",
+      "actor": "to_confirm",
+      "category": "example",
+      "title": "Exemple : evolution tarifaire sur un profil de gestion pilotee",
+      "status": "illustrative_placeholder",
+      "note": "Structure d'entree a completer manuellement lors de la veille reelle (source + date + lien)."
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "generated_at": "2026-07-22",
+  "last_successful_update": null,
+  "source": "Yahoo Finance (public, delayed quotes) via yfinance",
+  "disclaimer": "Donnees de marche publiques a titre illustratif. Peuvent etre differees. Les indices utilises sont des proxys publics (ETF ou index Yahoo Finance), pas necessairement les benchmarks officiels.",
+  "instruments": [
+    {
+      "ticker": "URTH",
+      "name": "MSCI World (proxy)",
+      "group": "indices",
+      "status": "stale_fetch_failed",
+      "as_of": null,
+      "returns_pct": {
+        "1w": null,
+        "1m": null,
+        "3m": null,
+        "6m": null,
+        "1y": null,
+        "3y": null,
+        "ytd": null
+      }
+    },
+    {
+      "ticker": "^GSPC",
+      "name": "S&P 500",
+      "group": "indices",
+      "status": "stale_fetch_failed",
+      "as_of": null,
+      "returns_pct": {
+        "1w": null,
+        "1m": null,
+        "3m": null,
+        "6m": null,
+        "1y": null,
+        "3y": null,
+        "ytd": null
+      }
+    },
+    {
+      "ticker": "^NDX",
+      "name": "Nasdaq-100",
+      "group": "indices",
+      "status": "stale_fetch_failed",
+      "as_of": null,
+      "returns_pct": {
+        "1w": null,
+        "1m": null,
+        "3m": null,
+        "6m": null,
+        "1y": null,
+        "3y": null,
+        "ytd": null
+      }
+    },
+    {
+      "ticker": "^STOXX50E",
+      "name": "Euro Stoxx 50",
+      "group": "indices",
+      "status": "stale_fetch_failed",
+      "as_of": null,
+      "returns_pct": {
+        "1w": null,
+        "1m": null,
+        "3m": null,
+        "6m": null,
+        "1y": null,
+        "3y": null,
+        "ytd": null
+      }
+    },
+    {
+      "ticker": "^STOXX",
+      "name": "STOXX Europe 600",
+      "group": "indices",
+      "status": "stale_fetch_failed",
+      "as_of": null,
+      "returns_pct": {
+        "1w": null,
+        "1m": null,
+        "3m": null,
+        "6m": null,
+        "1y": null,
+        "3y": null,
+        "ytd": null
+      }
+    },
+    {
+      "ticker": "EEM",
+      "name": "MSCI Emerging Markets (proxy)",
+      "group": "indices",
+      "status": "stale_fetch_failed",
+      "as_of": null,
+      "returns_pct": {
+        "1w": null,
+        "1m": null,
+        "3m": null,
+        "6m": null,
+        "1y": null,
+        "3y": null,
+        "ytd": null
+      }
+    },
+    {
+      "ticker": "EURUSD=X",
+      "name": "EUR/USD",
+      "group": "fx",
+      "status": "stale_fetch_failed",
+      "as_of": null,
+      "returns_pct": {
+        "1w": null,
+        "1m": null,
+        "3m": null,
+        "6m": null,
+        "1y": null,
+        "3y": null,
+        "ytd": null
+      }
+    },
+    {
+      "ticker": "DX-Y.NYB",
+      "name": "Dollar Index (proxy)",
+      "group": "fx",
+      "status": "stale_fetch_failed",
+      "as_of": null,
+      "returns_pct": {
+        "1w": null,
+        "1m": null,
+        "3m": null,
+        "6m": null,
+        "1y": null,
+        "3y": null,
+        "ytd": null
+      }
+    },
+    {
+      "ticker": "GC=F",
+      "name": "Or (future, proxy)",
+      "group": "commodities",
+      "status": "stale_fetch_failed",
+      "as_of": null,
+      "returns_pct": {
+        "1w": null,
+        "1m": null,
+        "3m": null,
+        "6m": null,
+        "1y": null,
+        "3y": null,
+        "ytd": null
+      }
+    },
+    {
+      "ticker": "BZ=F",
+      "name": "Petrole Brent (future, proxy)",
+      "group": "commodities",
+      "status": "stale_fetch_failed",
+      "as_of": null,
+      "returns_pct": {
+        "1w": null,
+        "1m": null,
+        "3m": null,
+        "6m": null,
+        "1y": null,
+        "3y": null,
+        "ytd": null
+      }
+    },
+    {
+      "ticker": "^VIX",
+      "name": "Volatilite (VIX)",
+      "group": "risk",
+      "status": "stale_fetch_failed",
+      "as_of": null,
+      "returns_pct": {
+        "1w": null,
+        "1m": null,
+        "3m": null,
+        "6m": null,
+        "1y": null,
+        "3y": null,
+        "ytd": null
+      }
+    },
+    {
+      "ticker": "^TNX",
+      "name": "Taux 10 ans US (proxy, x10)",
+      "group": "rates",
+      "status": "stale_fetch_failed",
+      "as_of": null,
+      "returns_pct": {
+        "1w": null,
+        "1m": null,
+        "3m": null,
+        "6m": null,
+        "1y": null,
+        "3y": null,
+        "ytd": null
+      }
+    }
+  ]
+}
