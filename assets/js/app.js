@@ -154,7 +154,13 @@ function renderCommittee() {
   ];
   box.innerHTML = kpiList.map(([label, ticker, period]) => {
     const inst = pick(ticker);
-    const val = inst && inst.status === "ok" ? inst.returns_pct[period] : null;
+    const val =
+  inst &&
+  inst.returns_pct &&
+  inst.returns_pct[period] !== null &&
+  inst.returns_pct[period] !== undefined
+    ? inst.returns_pct[period]
+    : null;
     const cls = val === null ? "na" : val >= 0 ? "up" : "down";
     const staleTag = inst && inst.status !== "ok" ? ` <span class="status watch">Cache</span>` : "";
     return `<div class="kpi"><span>${label} · ${period}</span><strong class="${cls}">${fmtPct(val)}</strong>${staleTag}</div>`;
@@ -165,15 +171,15 @@ function renderCommittee() {
   // "Ce qu'il faut retenir" — deterministic, rule-based, no AI call.
   const facts = [], consequences = [], watch = [];
   const vix = pick("^VIX"), tnx = pick("^TNX"), eur = pick("EURUSD=X");
-  if (vix && vix.status === "ok" && vix.returns_pct["1w"] !== null) {
+  if (vix && vix.returns_pct && vix.returns_pct["1w"] !== null) {
     if (vix.returns_pct["1w"] > 5) { facts.push("Hausse sensible de la volatilité (VIX) sur une semaine."); consequences.push("Prudence accrue sur les actifs les plus sensibles au risque."); }
     else if (vix.returns_pct["1w"] < -5) { facts.push("Détente de la volatilité (VIX) sur une semaine."); consequences.push("Appétit pour le risque potentiellement en amélioration."); }
   }
-  if (tnx && tnx.status === "ok" && tnx.returns_pct["1m"] !== null) {
+ if (tnx && tnx.returns_pct && tnx.returns_pct["1m"] !== null) {
     if (tnx.returns_pct["1m"] > 3) { facts.push("Tendance haussière des taux longs US sur un mois."); consequences.push("Pression possible sur les actifs de duration longue (obligataire, actions de croissance)."); }
     else if (tnx.returns_pct["1m"] < -3) { facts.push("Détente des taux longs US sur un mois."); consequences.push("Soutien possible pour les actifs de duration longue."); }
   }
-  if (eur && eur.status === "ok" && eur.returns_pct["1m"] !== null) {
+  if (eur && eur.returns_pct && eur.returns_pct["1m"] !== null) {
     if (eur.returns_pct["1m"] > 1) { facts.push("Appréciation de l'euro face au dollar sur un mois."); consequences.push("Effet potentiellement défavorable sur les portefeuilles non couverts exposés aux actifs USD."); }
     else if (eur.returns_pct["1m"] < -1) { facts.push("Dépréciation de l'euro face au dollar sur un mois."); consequences.push("Effet devise potentiellement favorable sur les actifs USD non couverts."); }
   }
