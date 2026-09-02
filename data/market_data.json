@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01",
+  "generated_at": "2026-09-02",
   "last_successful_update": "2026-09-01",
   "source": "Yahoo Finance (public, delayed quotes) via yfinance",
   "disclaimer": "Donnees de marche publiques a titre illustratif. Peuvent etre differees. Les indices utilises sont des proxys publics (ETF ou index Yahoo Finance), pas necessairement les benchmarks officiels.",
@@ -8,7 +8,7 @@
       "ticker": "URTH",
       "name": "MSCI World (proxy)",
       "group": "indices",
-      "status": "ok",
+      "status": "stale_fetch_failed",
       "as_of": "2026-08-31",
       "last_value": 208.82000732421875,
       "returns_pct": {
@@ -26,7 +26,7 @@
       "ticker": "^GSPC",
       "name": "S&P 500",
       "group": "indices",
-      "status": "ok",
+      "status": "stale_fetch_failed",
       "as_of": "2026-08-31",
       "last_value": 7686.14013671875,
       "returns_pct": {
@@ -44,7 +44,7 @@
       "ticker": "^NDX",
       "name": "Nasdaq-100",
       "group": "indices",
-      "status": "ok",
+      "status": "stale_fetch_failed",
       "as_of": "2026-08-31",
       "last_value": 29456.970703125,
       "returns_pct": {
@@ -62,7 +62,7 @@
       "ticker": "^STOXX50E",
       "name": "Euro Stoxx 50",
       "group": "indices",
-      "status": "ok",
+      "status": "stale_fetch_failed",
       "as_of": "2026-09-01",
       "last_value": 6374.41015625,
       "returns_pct": {
@@ -80,7 +80,7 @@
       "ticker": "^STOXX",
       "name": "STOXX Europe 600",
       "group": "indices",
-      "status": "ok",
+      "status": "stale_fetch_failed",
       "as_of": "2026-09-01",
       "last_value": 646.6199951171875,
       "returns_pct": {
@@ -98,7 +98,7 @@
       "ticker": "EEM",
       "name": "MSCI Emerging Markets (proxy)",
       "group": "indices",
-      "status": "ok",
+      "status": "stale_fetch_failed",
       "as_of": "2026-08-31",
       "last_value": 67.0199966430664,
       "returns_pct": {
@@ -116,7 +116,7 @@
       "ticker": "EURUSD=X",
       "name": "EUR/USD",
       "group": "fx",
-      "status": "ok",
+      "status": "stale_fetch_failed",
       "as_of": "2026-09-01",
       "last_value": 1.15968918800354,
       "returns_pct": {
@@ -134,7 +134,7 @@
       "ticker": "DX-Y.NYB",
       "name": "Dollar Index (proxy)",
       "group": "fx",
-      "status": "ok",
+      "status": "stale_fetch_failed",
       "as_of": "2026-09-01",
       "last_value": 99.59200286865234,
       "returns_pct": {
@@ -152,7 +152,7 @@
       "ticker": "GC=F",
       "name": "Or (future, proxy)",
       "group": "commodities",
-      "status": "ok",
+      "status": "stale_fetch_failed",
       "as_of": "2026-09-01",
       "last_value": 4429.89990234375,
       "returns_pct": {
@@ -170,7 +170,7 @@
       "ticker": "BZ=F",
       "name": "Petrole Brent (future, proxy)",
       "group": "commodities",
-      "status": "ok",
+      "status": "stale_fetch_failed",
       "as_of": "2026-09-01",
       "last_value": 91.80000305175781,
       "returns_pct": {
@@ -188,7 +188,7 @@
       "ticker": "^VIX",
       "name": "Volatilite (VIX)",
       "group": "risk",
-      "status": "ok",
+      "status": "stale_fetch_failed",
       "as_of": "2026-09-01",
       "last_value": 15.789999961853027,
       "returns_pct": {
@@ -206,7 +206,7 @@
       "ticker": "^TNX",
       "name": "Taux 10 ans US (proxy, x10)",
       "group": "rates",
-      "status": "ok",
+      "status": "stale_fetch_failed",
       "as_of": "2026-08-31",
       "last_value": 4.757999897003174,
       "returns_pct": {
