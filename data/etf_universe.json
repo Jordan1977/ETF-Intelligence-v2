@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17",
+  "generated_at": "2026-09-18",
   "count": 11,
   "disclaimer": "Univers demonstratif construit a partir de sources publiques. Ne reproduit pas la composition reelle des portefeuilles Yomoni.",
   "etfs": [
@@ -34,8 +34,15 @@
       "last_verified": "2026-07-20",
       "verification_status": "verified",
       "metrics": {
-        "status": "not_computed",
-        "as_of": null
+        "status": "computed",
+        "as_of": "2026-09-18",
+        "return_1y": 33.6458,
+        "volatility_1y": 14.1061,
+        "max_drawdown_1y": -21.6564,
+        "sharpe_1y": 1.0888,
+        "tracking_difference_1y": -5.1866,
+        "tracking_error_1y": 16.5462,
+        "note": "Le proxy d'indice n'est pas necessairement le benchmark officiel (ecarts devise/dividendes possibles)."
       }
     },
     {
@@ -69,8 +76,15 @@
       "last_verified": "2026-07-20",
       "verification_status": "verified",
       "metrics": {
-        "status": "not_computed",
-        "as_of": null
+        "status": "computed",
+        "as_of": "2026-09-18",
+        "return_1y": 34.6046,
+        "volatility_1y": 14.1132,
+        "max_drawdown_1y": -21.5907,
+        "sharpe_1y": 1.1155,
+        "tracking_difference_1y": -4.1469,
+        "tracking_error_1y": 16.478,
+        "note": "Le proxy d'indice n'est pas necessairement le benchmark officiel (ecarts devise/dividendes possibles)."
       }
     },
     {
@@ -104,8 +118,15 @@
       "last_verified": "2026-07-20",
       "verification_status": "verified",
       "metrics": {
-        "status": "not_computed",
-        "as_of": null
+        "status": "computed",
+        "as_of": "2026-09-18",
+        "return_1y": 34.2727,
+        "volatility_1y": 14.0829,
+        "max_drawdown_1y": -21.5883,
+        "sharpe_1y": 1.1171,
+        "tracking_difference_1y": -4.5238,
+        "tracking_error_1y": 16.4788,
+        "note": "Le proxy d'indice n'est pas necessairement le benchmark officiel (ecarts devise/dividendes possibles)."
       }
     },
     {
@@ -139,8 +160,15 @@
       "last_verified": "2026-07-20",
       "verification_status": "verified",
       "metrics": {
-        "status": "not_computed",
-        "as_of": null
+        "status": "computed",
+        "as_of": "2026-09-18",
+        "return_1y": 34.2658,
+        "volatility_1y": 15.311,
+        "max_drawdown_1y": -23.3674,
+        "sharpe_1y": 1.0334,
+        "tracking_difference_1y": -1.5181,
+        "tracking_error_1y": 17.5648,
+        "note": "Le proxy d'indice n'est pas necessairement le benchmark officiel (ecarts devise/dividendes possibles)."
       }
     },
     {
@@ -174,8 +202,15 @@
       "last_verified": "2026-07-20",
       "verification_status": "verified",
       "metrics": {
-        "status": "not_computed",
-        "as_of": null
+        "status": "computed",
+        "as_of": "2026-09-18",
+        "return_1y": 19.6984,
+        "volatility_1y": 15.7561,
+        "max_drawdown_1y": -23.3272,
+        "sharpe_1y": 0.7432,
+        "tracking_difference_1y": -9.3592,
+        "tracking_error_1y": 18.3552,
+        "note": "Le proxy d'indice n'est pas necessairement le benchmark officiel (ecarts devise/dividendes possibles)."
       }
     },
     {
@@ -209,8 +244,15 @@
       "last_verified": "2026-07-20",
       "verification_status": "verified",
       "metrics": {
-        "status": "not_computed",
-        "as_of": null
+        "status": "computed",
+        "as_of": "2026-09-18",
+        "return_1y": 33.4824,
+        "volatility_1y": 15.2403,
+        "max_drawdown_1y": -23.2847,
+        "sharpe_1y": 1.0147,
+        "tracking_difference_1y": -2.3308,
+        "tracking_error_1y": 17.4049,
+        "note": "Le proxy d'indice n'est pas necessairement le benchmark officiel (ecarts devise/dividendes possibles)."
       }
     },
     {
@@ -244,8 +286,15 @@
       "last_verified": "2026-07-20",
       "verification_status": "verified",
       "metrics": {
-        "status": "not_computed",
-        "as_of": null
+        "status": "computed",
+        "as_of": "2026-09-18",
+        "return_1y": 31.5592,
+        "volatility_1y": 13.8998,
+        "max_drawdown_1y": -16.1798,
+        "sharpe_1y": 1.0468,
+        "tracking_difference_1y": 7.3457,
+        "tracking_error_1y": 1.4686,
+        "note": "Le proxy d'indice n'est pas necessairement le benchmark officiel (ecarts devise/dividendes possibles)."
       }
     },
     {
@@ -279,8 +328,15 @@
       "last_verified": "2026-07-21",
       "verification_status": "partial",
       "metrics": {
-        "status": "not_computed",
-        "as_of": null
+        "status": "computed",
+        "as_of": "2026-09-18",
+        "return_1y": 22.1058,
+        "volatility_1y": 14.1481,
+        "max_drawdown_1y": -16.6002,
+        "sharpe_1y": 0.7698,
+        "tracking_difference_1y": null,
+        "tracking_error_1y": null,
+        "note": "Le proxy d'indice n'est pas necessairement le benchmark officiel (ecarts devise/dividendes possibles)."
       }
     },
     {
@@ -314,8 +370,15 @@
       "last_verified": "2026-07-21",
       "verification_status": "verified",
       "metrics": {
-        "status": "not_computed",
-        "as_of": null
+        "status": "computed",
+        "as_of": "2026-09-18",
+        "return_1y": 58.7164,
+        "volatility_1y": 20.2774,
+        "max_drawdown_1y": -17.44,
+        "sharpe_1y": 1.2387,
+        "tracking_difference_1y": null,
+        "tracking_error_1y": null,
+        "note": "Le proxy d'indice n'est pas necessairement le benchmark officiel (ecarts devise/dividendes possibles)."
       }
     },
     {
@@ -384,8 +447,15 @@
       "last_verified": "2026-07-21",
       "verification_status": "verified",
       "metrics": {
-        "status": "not_computed",
-        "as_of": null
+        "status": "computed",
+        "as_of": "2026-09-18",
+        "return_1y": 69.93,
+        "volatility_1y": 23.1391,
+        "max_drawdown_1y": -24.3966,
+        "sharpe_1y": 1.2599,
+        "tracking_difference_1y": null,
+        "tracking_error_1y": null,
+        "note": "Le proxy d'indice n'est pas necessairement le benchmark officiel (ecarts devise/dividendes possibles)."
       }
     }
   ]
